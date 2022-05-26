@@ -28,17 +28,19 @@ p {
 }
 
 img {
-  padding: 10px;
+  text-align: right;
 }
 
 .container {
-  width: 960px;
+  width: 980px;
   margin: 0 auto;
+  padding: 10px;
 }
 
 .row {
   border-bottom: 1px solid #ddd;
-  margin: 10px 0;
+  margin: 5px 0;
+  padding: 5px 0;
 }
 
 .row::after {
@@ -98,6 +100,7 @@ img {
 
 [class*="col-"] {
   float: left;
+  display: block;
 }
 
 @media only screen and (max-width: 768px) {
