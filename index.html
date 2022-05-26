@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News post</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="article"></div>
+  </body>
+</html>
+<script src="data.json"></script>
+<script>
+    for (var i = 0; i < data.articles.length; i++) {
+        createArticle(i);
+    }
+function createArticle(i) {
+    var article = document.getElementById("article");
+    var divRow = document.createElement("div");
+    var artElmt = document.createElement("article");
+    var aside = document.createElement("aside");
+    divRow.classList.add("row");
+    article.appendChild(divRow);
+
+    artElmt.classList.add("col-8", "post");
+    aside.classList.add("col-4", "thumb");
+
+    divRow.appendChild(artElmt);
+    divRow.appendChild(aside);
+    var post = document.getElementsByTagName("article");
+    var thumb = document.getElementsByTagName("aside");
+
+    var h1 = document.createElement("h1");
+    var a = document.createElement("a");
+    var p = document.createElement("p");
+    var div = document.createElement("div");
+    var img = document.createElement("img");
+    h1.innerText = data.articles[i].headline;
+    a.innerText = data.articles[i].primarySectionRouteName;
+    a.href = data.articles[i].link;
+    p.innerText = data.articles[i].standfirst;
+    post[i].appendChild(a);
+    post[i].appendChild(h1);
+    post[i].appendChild(p);
+    img.title = data.articles[i].thumbnail.title;
+    img.src = data.articles[i].thumbnail.src;
+    img.width = data.articles[i].thumbnail.width;
+    img.height = data.articles[i].thumbnail.height;
+    thumb[i].appendChild(img);
+}
+</script>
