@@ -2,8 +2,11 @@ $container-width:960px;
 $link-color:#0059bf;
 $heading-color: #000000;
 $text-color:#606669;
+*{
+    box-sizing: border-box;
+}
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 a{
     font-size:14px;
@@ -11,6 +14,7 @@ a{
     color: $link-color;
 }
 h1{
+    font-family: 'Roboto Slab', serif;
     margin: 5px  0;
     color: $heading-color;
     font-size: 24px;
@@ -18,6 +22,11 @@ h1{
 p{
     color:$text-color;
     font-size: 16px;
+    line-height: 24px;
+    margin: 5px 0;
+}
+img{
+    padding: 10px;
 }
 .container{
     width:$container-width;
